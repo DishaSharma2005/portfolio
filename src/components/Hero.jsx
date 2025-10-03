@@ -156,7 +156,7 @@ const Hero = () => {
           </div>
 
           <span className="text-yellow-400 font-bold text-lg hover:underline transition-all">
-            Catch the Adventure
+            Explore More 
           </span>
         </div>
       </div>
