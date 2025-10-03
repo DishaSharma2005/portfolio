@@ -1,6 +1,5 @@
 // src/components/Hero.jsx
 import { ArrowDown, Mail } from "lucide-react";
-import Button from "../components/ui/Button"; 
 import pikachuHero from "../assets/pikachu-hero-unscreen.gif";
 import pickachulogo from "../assets/pickachu-logos-multiple-unscreen.gif";
 import Typewriter from "./Typewriter";
