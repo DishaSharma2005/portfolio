@@ -115,7 +115,7 @@ export default function Contact() {
             </motion.h2>
 
             <p className="text-gray-400 max-w-xl text-center mb-12 relative z-10">
-                Send a data packet to start a collaboration or discuss a coding challenge.
+                Send a message to start a collaboration or discuss a coding challenge.
             </p>
 
             <div className="w-full max-w-lg space-y-10 relative z-10">
@@ -148,7 +148,7 @@ export default function Contact() {
                     <div className="space-y-4">
                         {/* Name Input */}
                         <div>
-                            <label className="block text-sm font-medium mb-1 text-gray-300">Trainer Name</label>
+                            <label className="block text-sm font-medium mb-1 text-gray-300">Name</label>
                             <input
                                 type="text"
                                 name="name"
@@ -160,7 +160,7 @@ export default function Contact() {
                         </div>
                         {/* Email Input */}
                         <div>
-                            <label className="block text-sm font-medium mb-1 text-gray-300">Transmission Email</label>
+                            <label className="block text-sm font-medium mb-1 text-gray-300">Email</label>
                             <input
                                 type="email"
                                 name="_replyto" // Required for Formspree to know where to reply
@@ -172,11 +172,11 @@ export default function Contact() {
                         </div>
                         {/* Message Textarea */}
                         <div>
-                            <label className="block text-sm font-medium mb-1 text-gray-300">Message (Data Packet)</label>
+                            <label className="block text-sm font-medium mb-1 text-gray-300">Message </label>
                             <textarea
                                 name="message"
                                 rows="5"
-                                placeholder="Tell me about your project or mission..."
+                                placeholder="Add your message here..."
                                 required
                                 disabled={status === 'loading' || status === 'success'}
                                 className="w-full px-4 py-2 border border-purple-500/50 rounded-lg bg-gray-900/80 text-white focus:ring-2 focus:ring-yellow-400 outline-none transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"

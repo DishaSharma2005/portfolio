@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Zap, Code, Star, Calendar } from 'lucide-react';
+import pdf from "../assets/certificate-Disha.pdf";
+
 
 // === Experience Data (Gym Challenges/Milestones) ===
 // Only one entry for the specific internship
@@ -93,6 +95,16 @@ const Experience = () => {
                                             </span>
                                         ))}
                                     </div>
+                                    <div className="mt-4">
+                                        <a 
+                                            href={pdf}
+                                            target="_blank"  
+                                            rel="noopener noreferrer"
+                                           className="inline-block px-5 py-2 font-semibold rounded-full text-gray-900 bg-yellow-400 shadow-[0_0_20px_rgba(255,255,0,0.5)] hover:bg-yellow-300 hover:shadow-[0_0_30px_rgba(255,255,0,0.9)] transition-all duration-300 animate-pulse"
+                                        >
+                                            View Internship Certificate
+                                        </a>
+                                   </div>
                                 </div>
 
                             </div>
