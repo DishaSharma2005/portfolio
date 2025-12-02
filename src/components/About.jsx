@@ -113,7 +113,7 @@ const quickStats = [
 // === Main Component ===
 export default function About({ profileImg }) {
   const fallbackProfile =
-    "https://placehold.co/400x400/374151/8a2be2?text=Your+Photo";
+    "https://placehold.co/400x400/374151/8a2be2?text=Disha+Sharma&font=roboto";
   const profileSrc = profileImg || fallbackProfile;
 
   return (
@@ -240,24 +240,30 @@ export default function About({ profileImg }) {
 
           {/* What Drives Me */}
           <div className="mt-4 p-5 rounded-xl bg-gray-800/70 border border-yellow-500/50 shadow-inner hover:border-yellow-300 transition-colors duration-300">
-            <h4 className="font-semibold text-xl text-yellow-400 flex items-center gap-3 mb-2">
-              <Lightbulb className="h-5 w-5 text-yellow-300" /> What Drives Me
+            <h4 className="font-semibold text-xl text-yellow-400 flex items-center gap-3 mb-2 pl-8">
+                🌸My Little Ways
             </h4>
             <p className="text-gray-300 italic">
-              "Known for being jolly and energetic—I thrive on challenges and
-              take pride in turning curiosity into work that solves real
-              problems."
+              "Bright, calm and always improving - I enjoy turning tiny ideas into tiny wins."
             </p>
           </div>
         </motion.div>
       </div>
 
       {/* Skills: My Current Abilities (Tech Badges) */}
-      <div className="max-w-6xl mx-auto mt-16 relative z-10">
-        <h3 className="text-2xl font-bold mb-6 flex items-center justify-center md:justify-start gap-3 text-cyan-400">
-          <Zap className="w-6 h-6" /> My Current Abilities
+      <div className="max-w-6xl mx-auto mt-16 relative z-10 px-2">
+        <h3 className="text-xl sm:text-2xl font-bold mb-6 flex items-center justify-center md:justify-start gap-2 text-cyan-400">
+          <Zap className="w-5 h-5 sm:w-6 sm:h-6" /> My Current Abilities
         </h3>
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+
+        <div
+          className="
+            grid grid-cols-2 
+            sm:flex sm:flex-wrap 
+            gap-3 sm:gap-4 
+            justify-center md:justify-start
+          "
+        >
           {skills.map((skill, idx) => (
             <motion.span
               key={idx}
@@ -266,7 +272,7 @@ export default function About({ profileImg }) {
               viewport={{ once: true, amount: 0.5 }}
               whileHover={{
                 scale: 1.05,
-                boxShadow: `0 0 15px ${skill.hoverColor
+                boxShadow: `0 0 12px ${skill.hoverColor
                   .replace("shadow-", "")
                   .replace("/80", "")}`,
               }}
@@ -276,14 +282,22 @@ export default function About({ profileImg }) {
                 damping: 20,
                 delay: idx * 0.1,
               }}
-              className={`px-5 py-2 ${skill.color} text-gray-200 rounded-full font-semibold shadow-lg flex items-center space-x-2 transition-transform border border-gray-700 cursor-pointer`}
+              className={`
+                px-3 sm:px-5 py-2 
+                ${skill.color} 
+                text-gray-200 rounded-full font-semibold shadow-lg 
+                flex items-center space-x-2 
+                transition-transform border border-gray-700 cursor-pointer
+                text-xs sm:text-sm
+              `}
             >
-              {skill.icon}
-              <span className="text-sm font-medium">{skill.name}</span>
+              <span className="scale-90 sm:scale-100">{skill.icon}</span>
+              <span className="font-medium">{skill.name}</span>
             </motion.span>
           ))}
         </div>
       </div>
+
 
       {/* Keyframes */}
       <style>
