@@ -9,7 +9,7 @@ const heroData = {
   description: [
     "Turning curiosity into projects with passion and determination.",
     "I believe in learning by building, exploring everything from full-stack apps to new technologies that spark my interest.",
-    "For me, code isn't just about syntax — it’s about experimenting, creating, and growing with every line I write.",
+    "For me, code isn't just about syntax : it’s about experimenting, creating, and growing with every line I write.",
   ],
   cta: [
     { text: "Explore More", href: "#about" },
@@ -25,7 +25,7 @@ const socialLinks = [
 const Hero = () => {
   return (
     <section
-      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden"
+      className="relative flex min-h-[60vh] items-center justify-center overflow-hidden pt-12 pb-2"
       style={{
         background: "linear-gradient(135deg, hsl(0, 0%, 5.5%) 0%, hsl(270, 91%, 25%) 50%, hsl(0, 0%, 5.5%) 100%)",
       }}
@@ -43,7 +43,7 @@ const Hero = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-4 py-12">
-        <div className="mx-auto max-w-4xl space-y-8 text-center">
+        <div className="mx-auto max-w-4xl space-y-12 text-center">
           <div className="space-y-6">
             <h1
               className="text-4xl font-bold leading-tight md:text-6xl"
@@ -73,16 +73,20 @@ const Hero = () => {
             >
               <Typewriter words={["Curious Programmer", "Creative Problem Solver", "Lifelong Learner"]} />
             </h2>
-
-            <div
-              className="space-y-4 text-lg md:text-xl"
-              style={{ color: "#ccc", animation: "slide-up 0.6s ease 0.4s forwards", fontWeight: "400" }}
-            >
-              {heroData.description.map((line, index) => (
-                <p key={index}>{line}</p>
-              ))}
-            </div>
+          <div
+            className="space-y-4 text-lg md:text-xl mx-auto max-w-2xl leading-relaxed text-center"
+            style={{ color: "#ccc", animation: "slide-up 0.6s ease 0.4s forwards", fontWeight: "450" }}
+          >
+            {heroData.description.map((line, index) => (
+              <p key={index} className="px-2">
+                {line}
+              </p>
+            ))}
           </div>
+
+
+     {/* this div has not to be delted */}
+     </div> 
 
           <div
             className="flex flex-wrap items-center justify-center gap-4"
@@ -118,33 +122,10 @@ const Hero = () => {
                 onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
               />
             </a>
-            <p className="text-sm text-gray-300">(Pichu squad says hi!)</p>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div
-          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 cursor-pointer p-3 rounded-full hover:bg-white/10 transition-colors"
-          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-        >
-          {/* Pokéball Icon */}
-          <div
-            className="w-8 h-8 rounded-full border-2 border-black relative flex items-center justify-center animate-bounce-fast overflow-hidden shadow-xl"
-            style={{
-              background: "linear-gradient(to bottom, #EE1515 50%, #FFFFFF 50%)",
-              borderColor: "rgba(0,0,0,0.5)",
-            }}
-          >
-            {/* Black Divider */}
-            <div className="absolute inset-x-0 h-1 bg-black top-1/2 transform -translate-y-1/2"></div>
-            {/* White Button */}
-            <div className="w-4 h-4 bg-white rounded-full absolute border-2 border-black shadow-inner"></div>
-          </div>
-
-          <span className="text-yellow-400 font-bold text-lg hover:underline transition-all">
-            Explore More 
-          </span>
-        </div>
       </div>
 
       {/* Keyframes */}
