@@ -26,12 +26,12 @@ const Typewriter = ({ words, speed = 100 }) => {
       let currentSpeed = isDeleting ? speed * 1.2: speed;
 
       if (!isDeleting && updatedText === currentWord) {
-        currentSpeed = 1500; // pause before deleting
+        currentSpeed = 5000; // pause before deleting
         setIsDeleting(true);
       } else if (isDeleting && updatedText === '') {
         setIsDeleting(false);
         setWordIndex((prev) => prev + 1);
-        currentSpeed = 500; // short pause before typing next word
+        currentSpeed = 1000; // short pause before typing next word
       }
 
       clearInterval(typingInterval);

@@ -9,7 +9,7 @@ const heroData = {
   description: [
     "Turning curiosity into projects with passion and determination.",
     "I believe in learning by building, exploring everything from full-stack apps to new technologies that spark my interest.",
-    "For me, code isn't just about syntax : it’s about experimenting, creating, and growing with every line I write.",
+     "Code is my space to explore, grow, and express creativity.",
   ],
   cta: [
     { text: "Explore More", href: "#about" },
@@ -71,7 +71,7 @@ const Hero = () => {
               className="text-xl text-gray-300 md:text-2xl"
               style={{ animation: "slide-up 0.6s ease 0.2s forwards", fontWeight: "600" }}
             >
-              <Typewriter words={["Curious Programmer", "Creative Problem Solver", "Lifelong Learner"]} />
+              <Typewriter words={["Curious Programmer", "Developer", "Builder", "Learner"]} />
             </h2>
           <div
             className="space-y-4 text-lg md:text-xl mx-auto max-w-2xl leading-relaxed text-center"
