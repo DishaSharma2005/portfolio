@@ -1,12 +1,57 @@
-# React + Vite
+<h1 align="center">⚡ Disha Sharma - Portfolio Website ⚡</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <em>My personal portfolio website built with ❤️ using modern web technologies.</em>
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <a href="https://disha-portfolio.onrender.com" target="_blank">
+    🌐 Visit My Portfolio
+  </a>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 About The Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This is my personal portfolio website showcasing my **skills**, **projects**, **experience**, and **achievements** in the field of software development and technology.  
+Built with a focus on **clean design**, **smooth animations**, and **responsive layout**, this website reflects my creative and technical journey.
+
+I designed this portfolio with creativity and attention to detail, keeping the Pokémon-inspired theme intact throughout. From colors and icons to animations, every element adds a spark of fun while maintaining a clean, professional aesthetic.
+
+---
+
+## 🧩 Tech Stack
+
+- ⚛️ **React.js** — Component-based frontend library  
+- 💨 **Tailwind CSS** — Utility-first CSS framework for rapid UI development  
+- 🎞 **Framer Motion** — For smooth and engaging animations  
+- 🧠 **Lucide Icons** — Minimal and elegant icon set  
+- ⚙️ **Vite** — Lightning-fast bundler and development environment  
+
+---
+
+## ✨ Features
+
+- 🎨 **Modern & responsive design**
+- 🌀 **Smooth animations and transitions**
+- 🧾 **Downloadable Resume/Certificates**
+- 🧠 **Interactive project showcase**
+- 🌙 **Dynamic and aesthetic UI**
+
+---
+
+## 🖼️ Portfolio Preview
+
+<p align="center">
+  <img src="https://github.com/DishaSharma2005/portfolio/blob/main/src/assets/Screenshot%20portfolio.png" 
+       alt="Portfolio Preview" 
+       width="750" 
+       style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" />
+</p>
+
+<p align="center">
+  ✨ A glimpse of my personal portfolio  ✨
+</p>
+
+
