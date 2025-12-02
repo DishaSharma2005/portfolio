@@ -1,15 +1,11 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Send, Zap, Code, CheckCircle } from "lucide-react"; // Imported CheckCircle
+import { Send, Zap, Code, CheckCircle } from "lucide-react"; // Imported CheckCircle
 import React, { useState } from "react"; // Imported useState
 
 // Placeholder links (Please replace with your actual links)
-const MY_GITHUB_URL = "https://github.com/DishaSharma2005";
-const MY_LINKEDIN_URL = "https://linkedin.com/in/disha-sharma-25072005d";
-const MY_EMAIL = "mailto:sharmadisha25july@gmail.com";
-
 // 🚨 ACTION REQUIRED: Replace this placeholder with your actual Formspree endpoint.
 // Example: https://formspree.io/f/xvonnkgg
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjkarlvo"; 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjkarlvo";
 
 export default function Contact() {
     // State to manage form submission status
@@ -48,21 +44,6 @@ export default function Contact() {
         }
     };
 
-    const socialLinks = [
-        { icon: Github, label: "Github", status: "Github Profile", href: MY_GITHUB_URL },
-        { icon: Linkedin, label: "Linkedin", status: "Let's Connect", href: MY_LINKEDIN_URL },
-        { icon: Mail, label: "Mail", status: "Mail Ready", href: MY_EMAIL },
-    ];
-
-    const getStatusColor = (status) => {
-        switch (status) {
-            case 'Live Connection': return 'bg-green-500';
-            case 'Data Storage': return 'bg-purple-500';
-            case 'Mail Ready': return 'bg-yellow-500'; // Adjusted for consistency
-            default: return 'bg-gray-500';
-        }
-    };
-    
     // Determine button content based on submission status
     const buttonContent = {
         idle: <><Send className="mr-3 h-5 w-5 group-hover:rotate-12 transition-transform" /> Initiate Transmission</>,
@@ -119,7 +100,7 @@ export default function Contact() {
             </p>
 
             <div className="w-full max-w-lg space-y-10 relative z-10">
-                
+
                 {/* 1. Contact Form - Streamlined Card */}
                 <motion.form
                     // 🚨 IMPORTANT FIX: Added action and method attributes for Formspree
@@ -194,47 +175,6 @@ export default function Contact() {
                     </div>
                 </motion.form>
 
-                {/* 2. Connection Console - Simplified Panel */}
-                <motion.div
-                    className="p-6 rounded-xl bg-gray-900/80 border border-purple-500 shadow-xl"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.2 }}
-                >
-                    <h4 className="text-xl font-semibold mb-4 text-purple-400 flex items-center gap-2">
-                        <Code className="w-5 h-5 text-yellow-400"/>
-                        Connection Status
-                    </h4>
-                    
-                    {/* Social Links List */}
-                    <div className="space-y-3">
-                        {socialLinks.map((link) => (
-                            <a
-                                key={link.label}
-                                href={link.href}
-                                target="_blank"
-                                rel="noreferrer"
-                                className={`flex items-center gap-4 p-3 rounded-lg transition-colors group border border-gray-700 hover:border-yellow-400/50 bg-gray-800/50`}
-                            >
-                                <div className={`w-3 h-3 rounded-full ${getStatusColor(link.status)} animate-pulse`}></div>
-                                <link.icon className="h-5 w-5 text-gray-400 group-hover:text-yellow-400 transition-colors" />
-                                <div className="flex-1">
-                                    <div className="text-sm font-medium text-white">{link.label}</div>
-                                    <div className="text-xs text-gray-400 italic">{link.status}</div>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-
-                    {/* Quick Response Badge */}
-                    <div className="mt-6 pt-4 border-t border-gray-700/50">
-                        <p className="text-gray-400 text-sm flex items-center gap-2">
-                            <Zap className="h-4 w-4 text-yellow-400" />
-                            Status: Transmission usually processed within 24 hours.
-                        </p>
-                    </div>
-
-                </motion.div>
             </div>
 
             {/* Footer */}

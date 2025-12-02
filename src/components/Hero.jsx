@@ -1,6 +1,5 @@
 // src/components/Hero.jsx
-import { ArrowDown, Mail } from "lucide-react";
-import pikachuHero from "../assets/pikachu-hero-unscreen.gif";
+import { Github, Linkedin, Mail } from "lucide-react";
 import pickachulogo from "../assets/pickachu-logos-multiple-unscreen.gif";
 import Typewriter from "./Typewriter";
 import scrollIcon from "../assets/purpleball.gif";
@@ -15,14 +14,19 @@ const heroData = {
   ],
   cta: [
     { text: "Explore More", href: "#about" },
-    { text: "Let’s Connect", href: "mailto:your-email@example.com" },
   ],
 };
+
+const socialLinks = [
+  { icon: Github, label: "GitHub", href: "https://github.com/DishaSharma2005" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/disha-sharma-25072005d" },
+  { icon: Mail, label: "Mail", href: "mailto:sharmadisha25july@gmail.com" },
+];
 
 const Hero = () => {
   return (
     <section
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden"
       style={{
         background: "linear-gradient(135deg, hsl(0, 0%, 5.5%) 0%, hsl(270, 91%, 25%) 50%, hsl(0, 0%, 5.5%) 100%)",
       }}
@@ -39,18 +43,17 @@ const Hero = () => {
         ></div>
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 py-16">
-        <div className="mx-auto flex max-w-6xl flex-col-reverse items-center gap-12 text-center lg:flex-row lg:gap-16 lg:text-left">
-          {/* Text Content */}
-          <div className="flex-1 space-y-6">
+      <div className="container relative z-10 mx-auto px-4 py-12">
+        <div className="mx-auto max-w-4xl space-y-8 text-center">
+          <div className="space-y-6">
             <h1
-              className="text-4xl font-bold leading-tight md:text-6xl lg:text-7xl"
-              style={{ 
+              className="text-4xl font-bold leading-tight md:text-6xl"
+              style={{
                 animation: "slide-up 0.6s ease forwards",
                 color: "#ffffff",
                 fontSize: "2.5rem",
                 fontWeight: "700",
-                lineHeight: "1.2", 
+                lineHeight: "1.2",
               }}
             >
               Hi, I’m{" "}
@@ -66,78 +69,62 @@ const Hero = () => {
             </h1>
 
             <h2
-              className="text-xl text-gray-300 md:text-2xl lg:text-3xl"
-              style={{ animation: "slide-up 0.6s ease 0.2s forwards" , fontWeight:"600" }}
+              className="text-xl text-gray-300 md:text-2xl"
+              style={{ animation: "slide-up 0.6s ease 0.2s forwards", fontWeight: "600" }}
             >
               <Typewriter words={["Curious Programmer", "Creative Problem Solver", "Lifelong Learner"]} />
             </h2>
 
             <div
               className="space-y-4 text-lg md:text-xl"
-              style={{ color: "#ccc", animation: "slide-up 0.6s ease 0.4s forwards", fontWeight:"400" }}
+              style={{ color: "#ccc", animation: "slide-up 0.6s ease 0.4s forwards", fontWeight: "400" }}
             >
               {heroData.description.map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
             </div>
-
-            {/* CTA Buttons - Using a simple link for the GIF */}
-            <div
-              className="flex flex-col sm:flex-row sm:justify-center lg:justify-start"
-              style={{
-                animation: "slide-up 0.6s ease 0.6s forwards",
-                display: "flex",
-              }}
-            >
-              <a href={heroData.cta[0].href} className="flex justify-center lg:justify-start">
-                <img
-                  src={pickachulogo}
-                  alt="Explore More"
-                  // RESPONSIVENESS CHANGE: Use w-full and max-height for sizing
-                  className="w-full max-w-[10rem] sm:max-w-[12rem] mx-auto lg:mx-0"
-                  style={{
-                    height: "auto", // Removed fixed height
-                    maxWidth: "12rem", // Keep the max size reasonable
-                    cursor: "pointer",
-                    transition: "transform 0.3s",
-                  }}
-                  onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                />
-              </a>
-            </div>
           </div>
 
-          {/* Pikachu Character */}
-          {/* RESPONSIVENESS CHANGE: Added classes to limit max width on smaller screens and center on mobile */}
-          <div 
-            className="flex justify-center lg:justify-end w-full lg:w-auto" // Center on small screens, push right on large
-            style={{ animation: "scale-in 0.6s ease 1s forwards" }}
+          <div
+            className="flex flex-wrap items-center justify-center gap-4"
+            style={{ animation: "slide-up 0.6s ease 0.6s forwards" }}
           >
-            <div className="relative **max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg**"> {/* Limits container size */}
-              <div
-                className="absolute inset-0 rounded-full blur-2xl"
-                style={{ backgroundColor: "rgba(255, 234, 0, 0.2)", animation: "pulse-glow 2s ease-in-out infinite" }}
-              ></div>
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-white transition hover:-translate-y-1 hover:border-yellow-400/60 hover:bg-white/10"
+              >
+                <link.icon className="h-5 w-5 text-yellow-400" />
+                <span className="font-medium">{link.label}</span>
+              </a>
+            ))}
+          </div>
+
+          <div
+            className="flex flex-col items-center gap-4"
+            style={{ animation: "slide-up 0.6s ease 0.8s forwards" }}
+          >
+            <a href={heroData.cta[0].href} className="flex justify-center">
               <img
-                src={pikachuHero}
-                alt="Pikachu waving"
-                // RESPONSIVENESS CHANGE: Use w-full and h-auto to scale within the container
-                className="**w-full h-auto**" 
+                src={pickachulogo}
+                alt="Explore More"
+                className="w-full max-w-[12rem]"
                 style={{
-                  objectFit: "contain",
-                  animation: "float 3s ease-in-out infinite",
+                  height: "auto",
+                  cursor: "pointer",
                   transition: "transform 0.3s",
                 }}
-                onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+                onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
                 onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
               />
-            </div>
+            </a>
+            <p className="text-sm text-gray-300">(Pichu squad says hi!)</p>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div 
+        <div
           className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 cursor-pointer p-3 rounded-full hover:bg-white/10 transition-colors"
           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
         >
