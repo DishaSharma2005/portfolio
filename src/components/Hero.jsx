@@ -3,7 +3,6 @@ import { ArrowDown, Mail } from "lucide-react";
 import pikachuHero from "../assets/pikachu-hero-unscreen.gif";
 import pickachulogo from "../assets/pickachu-logos-multiple-unscreen.gif";
 import Typewriter from "./Typewriter";
-import scrollIcon from "../assets/purpleball.gif";
 
 const heroData = {
   name: "Disha Sharma",
