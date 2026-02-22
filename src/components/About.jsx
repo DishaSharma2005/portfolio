@@ -87,13 +87,13 @@ const quickStats = [
   value: (
     <span>
       <span className="text-sm text-gray-400">(current)</span>{" "}
+      <br></br>
       <span className="font-medium">CGPA - 8+</span>
     </span>
   ),
 },
 
 
-  { label: "Looking For", value: "Remote Full-Stack Internship" },
   { 
     label: "Coding Profiles", 
     value: (
@@ -103,7 +103,7 @@ const quickStats = [
         rel="noopener noreferrer"
         className="text-yellow-300 underline hover:text-yellow-400 transition"
       >
-        LeetCode
+        LeetCode<br></br> (130+ problems · Contest Rating: 1509)
       </a>
     )
   },
@@ -218,19 +218,23 @@ export default function About({ profileImg }) {
             <h3 className="text-2xl font-semibold mb-4 text-yellow-300 flex items-center gap-2 justify-center md:justify-start">
               <HeartIcon /> Quick Snapshot
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
               {quickStats.map((stat, idx) => (
-                <div
+                <motion.div
                   key={idx}
-                  className="rounded-xl bg-gray-900/40 border border-gray-700/70 px-4 py-3 flex flex-col gap-1 items-center md:items-start"
+                  whileHover={{ 
+                    translateY: -6,
+                    boxShadow: "0 12px 24px rgba(168, 85, 247, 0.25)"
+                  }}
+                  className="rounded-lg bg-gradient-to-br from-purple-900/30 to-gray-900/50 backdrop-blur-sm border border-purple-500/40 hover:border-purple-400/70 px-6 py-5 flex flex-col gap-2 items-center md:items-start transition-all duration-300 shadow-md hover:shadow-lg min-h-[100px]"
                 >
-                  <span className="text-[0.7rem] uppercase tracking-[0.18em] text-gray-400">
+                  <span className="text-[0.65rem] uppercase tracking-[0.2em] text-purple-300 font-bold">
                     {stat.label}
                   </span>
-                  <span className="font-semibold text-gray-100 text-sm">
+                  <span className="font-bold text-white text-sm leading-tight">
                     {stat.value}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

@@ -43,7 +43,7 @@ const projectSections = [
         tech: ["MERN Stack", "MongoDB", "Express.js", "EJS", "Node.js"],
         category: "Full Stack",
         img: "https://placehold.co/600x400/8a2be2/ffffff?text=WanderLust+Mini-Airbnb",
-        demo: "#", // Live link (replace when ready)
+        demo: "https://wanderlust-mini-airbnb.onrender.com/",
         github: GITHUB_BASE_URL + "WanderLust-Mini-Airbnb",
         featured: true,
       },
@@ -64,7 +64,7 @@ const projectSections = [
         ],
         category: "Civic Tech",
         img: "https://placehold.co/600x400/ffea00/000000?text=Urban-X:+Grievance+Reporting&font-size=24",
-        demo: "#",
+        demo: "https://urban-x-rdhu.onrender.com/",
         github: GITHUB_BASE_URL + "urban-X",
         featured: false,
       },
