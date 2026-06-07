@@ -18,12 +18,12 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-[#0f0f0f] border-t border-purple-800/50 py-16 text-gray-400 relative overflow-hidden">
-            <div className="container mx-auto px-4">
+        <footer className="bg-[#0f0f0f] border-t border-purple-800/50 py-12 sm:py-16 text-gray-400 relative overflow-hidden">
+            <div className="container mx-auto px-4 sm:px-6">
                 <div className="max-w-6xl mx-auto">
                     
                     {/* Main Footer Content */}
-                    <div className="text-center space-y-8">
+                    <div className="text-center space-y-6 sm:space-y-8">
                         
                         {/* Back to Top Button: Thematic Pokéball
                         <div className="flex justify-center mb-10">
@@ -39,7 +39,7 @@ const Footer = () => {
                         {/* Logo/Name */}
                        <div>
                             <h3 
-                                className="text-2xl font-extrabold mb-1 tracking-wide"
+                                className="text-xl sm:text-2xl font-extrabold mb-1 tracking-wide"
                                 style={{
                                     // Subtle gradient retained for branding
                                     background: "linear-gradient(90deg, #AA00FF 0%, #FFEA00 100%)",
@@ -49,23 +49,24 @@ const Footer = () => {
                             >
                                 Disha Sharma
                             </h3>
-                            <p className="text-gray-500 text-sm italic">
-                                Curious Programmer | Full Stack Developer
+                            <p className="text-gray-500 text-xs sm:text-sm italic px-4">
+                                Curious Programmer
                             </p>
                         </div>
 
                         {/* Quick Links (Navigation Console) */}
-                        <div className="flex flex-wrap justify-center gap-8 text-sm pt-4">
+                        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-8 text-sm pt-4 px-2">
                             {[
-                                { name: "Home", href: "#" },
+                                { name: "Home", href: "#hero" },
                                 { name: "About", href: "#about" },
                                 { name: "Projects", href: "#projects" },
+                                { name: "Experience", href: "#experience" },
                                 { name: "Contact", href: "#contact" }
-                            ].map((link, index) => (
+                            ].map((link) => (
                                 <a 
                                     key={link.name}
                                     href={link.href} 
-                                    className="text-gray-400 hover:text-purple-400 transition-colors hover:-translate-y-0.5 transform duration-200 font-medium"
+                                    className="text-gray-400 hover:text-purple-400 transition-colors hover:-translate-y-0.5 transform duration-200 font-medium min-h-[44px] flex items-center px-1"
                                 >
                                     {link.name}
                                 </a>
@@ -77,7 +78,7 @@ const Footer = () => {
 
                         {/* Copyright & Theme */}
                         <div className="space-y-2">
-                            <p className="flex items-center justify-center gap-2 text-sm text-gray-500">
+                            <p className="flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm text-gray-500 px-4">
                                 Built with{' '}
                                 <Heart className="h-4 w-4 text-red-500 animate-pulse" fill="currentColor" />
                                 {' '}and a passion for code.
