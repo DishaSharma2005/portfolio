@@ -20,6 +20,9 @@ const techColorMap = {
   "JWT": { bg: "bg-amber-700/40", text: "text-amber-300", border: "border-amber-500/50" },
   "AI Toolkit": { bg: "bg-pink-700/40", text: "text-pink-300", border: "border-pink-500/50" },
   "REST APIs": { bg: "bg-gray-700/40", text: "text-gray-300", border: "border-gray-500/50" },
+  "Supabase": { bg: "bg-teal-700/40", text: "text-teal-300", border: "border-teal-500/50" },
+  "Stripe": { bg: "bg-indigo-700/40", text: "text-indigo-300", border: "border-indigo-500/50" },
+  "Gemini API": { bg: "bg-blue-700/40", text: "text-blue-300", border: "border-blue-500/50" },
 
   "default": { bg: "bg-gray-700/40", text: "text-gray-300", border: "border-gray-500/50" }
 };
@@ -34,6 +37,20 @@ const projectSections = [
     name: "Major Projects",
     projects: [
       {
+        id: 4,
+        title: "Zentra Trade",
+        desc: [
+          "AI-powered trading simulation to manage virtual investments with live market data, portfolio analytics, Stripe wallet funding, and Google OAuth.",
+          "Gemini Copilot reads your portfolio and market context to suggest trades you approve and execute. React dashboard backed by Node.js/Express APIs and Supabase.",
+        ],
+        tech: ["React.js", "Node.js", "Express.js", "Supabase", "Stripe", "Gemini API", "REST APIs"],
+        category: "Full Stack",
+        img: "https://placehold.co/600x400/312e81/ffffff?text=Zentra+Trade",
+        demo: "https://zentra-trade.vercel.app/",
+        github: GITHUB_BASE_URL + "Zentra-Trade",
+        featured: true,
+      },
+      {
         id: 1,
         title: "WanderLust: Mini-Airbnb",
         desc: [
@@ -45,7 +62,7 @@ const projectSections = [
         img: "https://placehold.co/600x400/8a2be2/ffffff?text=WanderLust+Mini-Airbnb",
         demo: "https://wanderlust-mini-airbnb.onrender.com/",
         github: GITHUB_BASE_URL + "WanderLust-Mini-Airbnb",
-        featured: true,
+        featured: false,
       },
       {
         id: 2,
@@ -68,35 +85,20 @@ const projectSections = [
         github: GITHUB_BASE_URL + "urban-X",
         featured: false,
       },
-     {
-  id: 3,
-  title: "SmartQueue [On Going]",
-  desc: [
-    "A real-time digital queue and appointment orchestration system designed to streamline customer flow in banks, hospitals, and service centers.",
-    "Users can join queues online, track live token updates, and view estimated wait times while admins manage counters and analytics through a dedicated dashboard."
-  ],
-  tech: ["React.js", "Spring Boot", "PostgreSQL", "WebSockets", "JWT"],
-  category: "Product Builds",
-  img: "https://placehold.co/600x400/1e40af/ffffff?text=SmartQueue",
-  demo: "#",
-  github: "#",
-  featured: false,
-},
-{
-  id: 4,
-  title: "Zentra Trade [On Going]",
-  desc: [
-    "A hybrid Zerodha + ChatGPT style platform blending trading dashboards with AI-assisted insights for smarter analysis and decision-making.",
-    "Built for seamless watchlists, trade flows, and natural-language market queries. Detailed modules and stack highlights will be updated after the first milestone release."
-  ],
-  tech: ["React.js", "Node.js", "AI Toolkit", "REST APIs"],
-  category: "Product Builds",
-  img: "https://placehold.co/600x400/312e81/ffffff?text=Zentra+Trade",
-  demo: "#",
-  github: GITHUB_BASE_URL + "Zentra-Trade",
-  featured: false,
-},
-
+      {
+        id: 3,
+        title: "SmartQueue",
+        desc: [
+          "A real-time digital queue and appointment orchestration system designed to streamline customer flow in banks, hospitals, and service centers.",
+          "Users can join queues online, track live token updates, and view estimated wait times while admins manage counters and analytics through a dedicated dashboard.",
+        ],
+        tech: ["React.js", "Spring Boot", "PostgreSQL", "WebSockets", "JWT"],
+        category: "Product Builds",
+        img: "https://placehold.co/600x400/1e40af/ffffff?text=SmartQueue",
+        demo: "#",
+        github: "#",
+        featured: false,
+      },
     ],
   },
   {
@@ -134,8 +136,8 @@ const projectSections = [
         id: 7,
         title: "Circuit Designing System",
         desc: [
-            "Interactive tool for designing and analyzing resistor circuits in both series and parallel configurations.",
-            "Calculates total resistance, current flow, and voltage drops while providing a clean visualization of the final circuit layout."
+          "Interactive tool for designing and analyzing resistor circuits in both series and parallel configurations.",
+          "Calculates total resistance, current flow, and voltage drops while providing a clean visualization of the final circuit layout.",
         ],
         tech: ["EDA", "Simulation", "Frontend"],
         category: "Engineering",
@@ -149,8 +151,8 @@ const projectSections = [
             id: 8,
             title: "Sudoku Solver",
             desc: [
-                "A clean Java-based Sudoku solver powered by optimized backtracking to solve puzzles efficiently.",
-                "Demonstrates recursion, constraint checking, and algorithmic reasoning with optional step-wise visualization."
+              "A clean Java-based Sudoku solver powered by optimized backtracking to solve puzzles efficiently.",
+              "Demonstrates recursion, constraint checking, and algorithmic reasoning with optional step-wise visualization.",
             ],
             tech: ["Java", "Algorithms", "Backtracking", "Visualization"],
             category: "Problem Solving",
@@ -179,7 +181,7 @@ const ProjectButton = ({ children, href, icon: Icon, primary = false, onClick })
     target="_blank"
     rel="noreferrer"
     onClick={onClick}
-    className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.05] shadow-md
+    className={`flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px] px-4 py-2.5 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.05] shadow-md
       ${
         primary
           ? "bg-yellow-500 text-gray-900 shadow-yellow-400/50 hover:bg-yellow-300"
@@ -210,7 +212,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-[#0f0f0f] py-24 px-6 flex flex-col items-center min-h-screen font-inter"
+      className="bg-[#0f0f0f] py-16 sm:py-24 px-4 sm:px-6 flex flex-col items-center min-h-screen font-inter"
     >
       {/* Divider */}
       <div className="w-full max-w-6xl h-0.5 bg-gradient-to-r from-transparent via-purple-600 to-transparent mb-16" />
@@ -236,7 +238,7 @@ export default function Projects() {
             </span>
 
             {/* SECOND LINE (never breaks between PROJECT & RECORDS) */}
-            <span className="block whitespace-nowrap">
+            <span className="block">
                 PROJECT RECORDS
             </span>
       </motion.h2>
@@ -256,7 +258,7 @@ export default function Projects() {
               setActiveSection(section.name);
               setActiveFilter("All");
             }}
-            className={`px-5 py-2 rounded-full font-semibold text-sm transition-all shadow-md border
+            className={`px-4 sm:px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all shadow-md border min-h-[40px]
               ${
                 activeSection === section.name
                   ? "bg-yellow-400 text-gray-900 shadow-yellow-400/50 border-yellow-300"
@@ -279,7 +281,7 @@ export default function Projects() {
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`px-4 py-2 rounded-full font-semibold text-sm transition-all shadow-md
+            className={`px-3 sm:px-4 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all shadow-md min-h-[40px]
               ${
                 activeFilter === filter
                   ? "bg-purple-600 text-white shadow-purple-600/50 border border-purple-400"
@@ -292,7 +294,7 @@ export default function Projects() {
       </motion.div>
 
       {/* Projects Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 max-w-4xl w-full mx-auto">
         {filteredProjects.map((project, index) => {
           const isFeatured = project.featured;
           const delay = index * 0.15;
@@ -300,8 +302,7 @@ export default function Projects() {
           return (
             <motion.div
               key={project.id}
-              className={`rounded-xl overflow-hidden shadow-2xl transition group relative border-2 border-gray-800/80 bg-gray-900/50 backdrop-blur-sm 
-                ${isFeatured ? "lg:col-span-1" : "lg:col-span-1"}`}
+              className="w-full rounded-xl overflow-hidden shadow-2xl transition group relative border-2 border-gray-800/80 bg-gray-900/50 backdrop-blur-sm"
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               whileHover={{
@@ -316,7 +317,7 @@ export default function Projects() {
               }}
             >
               {/* Image */}
-              <div className="relative overflow-hidden h-48 bg-gray-800 flex items-center justify-center">
+              <div className="relative overflow-hidden h-36 sm:h-44 md:h-48 bg-gray-800 flex items-center justify-center">
                 <img
                   src={project.img}
                   alt={project.title}
@@ -324,33 +325,33 @@ export default function Projects() {
                 />
 
                 {isFeatured && (
-                  <span className="absolute top-4 right-4 px-3 py-1 text-xs font-bold bg-yellow-400 text-gray-900 rounded-full shadow-lg">
+                  <span className="absolute top-2 right-2 sm:top-4 sm:right-4 px-2 sm:px-3 py-0.5 sm:py-1 text-[0.65rem] sm:text-xs font-bold bg-yellow-400 text-gray-900 rounded-full shadow-lg">
                     Featured Quest
                   </span>
                 )}
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-yellow-400 mb-2 group-hover:text-purple-400 transition-colors">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-400 mb-2 group-hover:text-purple-400 transition-colors break-words">
                   {project.title}
                 </h3>
 
-                <div className="text-gray-400 text-sm mb-4 min-h-[80px] space-y-2">
+                <div className="text-gray-400 text-xs sm:text-sm mb-4 space-y-2 md:min-h-[80px]">
                   {project.desc.map((paragraph, idx) => (
-                    <p key={idx}>{paragraph}</p>
+                    <p key={idx} className="break-words leading-relaxed">{paragraph}</p>
                   ))}
                 </div>
 
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                   {project.tech && project.tech.length > 0 ? (
                     project.tech.map((tech, i) => {
                       const color = techColorMap[tech] || techColorMap.default;
                       return (
                         <span
                           key={i}
-                          className={`px-3 py-1 text-xs rounded-full border ${color.bg} ${color.text} ${color.border}`}
+                          className={`px-2.5 sm:px-3 py-0.5 sm:py-1 text-[0.65rem] sm:text-xs rounded-full border ${color.bg} ${color.text} ${color.border}`}
                         >
                           {tech}
                         </span>
@@ -364,7 +365,7 @@ export default function Projects() {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   {project.demo && project.demo !== "#" && (
                     <ProjectButton
                       href={project.demo}
@@ -393,12 +394,12 @@ export default function Projects() {
 
       {/* Final CTA */}
       <motion.div
-        className="mt-16 text-center max-w-2xl"
+        className="mt-12 sm:mt-16 text-center max-w-2xl w-full px-2 sm:px-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <p className="text-gray-300 mb-4">
+        <p className="text-gray-300 mb-4 text-sm sm:text-base px-2">
           These are some of the battles I’ve fought so far. I keep experimenting,
           shipping small things, and refining how I build.
         </p>
@@ -406,7 +407,7 @@ export default function Projects() {
           href="https://github.com/DishaSharma2005"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-yellow-400 text-gray-900 font-semibold shadow-lg hover:bg-yellow-300 transition-all"
+          className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px] px-5 py-2.5 text-sm sm:text-base rounded-full bg-yellow-400 text-gray-900 font-semibold shadow-lg hover:bg-yellow-300 transition-all"
         >
           <Github className="w-4 h-4" />
           View More on GitHub

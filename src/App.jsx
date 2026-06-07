@@ -10,12 +10,12 @@ import './index.css'
 
 const App = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />
-      <Projects /> 
       <Experience />
+      <Projects />
       <Contact /> 
       <Footer />
       </div>

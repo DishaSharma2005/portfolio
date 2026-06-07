@@ -44,7 +44,7 @@ const Typewriter = ({ words, speed = 100 }) => {
   }, [wordIndex, isDeleting, words, speed]);
 
   return (
-    <span className="border-r-4 border-yellow-400 pr-1">
+    <span className="inline-block border-r-2 sm:border-r-4 border-yellow-400 pr-1 break-words">
       {text}
     </span>
   );

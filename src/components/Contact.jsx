@@ -54,7 +54,7 @@ export default function Contact() {
     
     // Determine button class based on submission status
     const buttonClass = (status) => {
-        let base = "w-full flex items-center justify-center font-bold py-3 rounded-lg transition-all shadow-lg group";
+        let base = "w-full flex items-center justify-center font-bold py-3 min-h-[48px] text-sm sm:text-base rounded-lg transition-all shadow-lg group";
         if (status === 'success') {
             return `${base} bg-green-500 text-white shadow-green-500/30 cursor-default`;
         }
@@ -71,7 +71,7 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="relative bg-[#0f0f0f] py-24 px-6 text-white flex flex-col items-center overflow-hidden"
+            className="relative bg-[#0f0f0f] py-16 sm:py-24 px-4 sm:px-6 text-white flex flex-col items-center overflow-hidden"
         >
             {/* Subtle Background Glow Effect (Only a hint of purple) */}
             <div 
@@ -80,7 +80,7 @@ export default function Contact() {
 
             {/* Heading */}
             <motion.h2
-                className="text-4xl font-black mb-4 text-center tracking-wider relative z-10"
+                className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 text-center tracking-wider relative z-10 px-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -91,15 +91,15 @@ export default function Contact() {
                     filter: "drop-shadow(0 2px 5px rgba(255, 234, 0, 0.2))",
                 }}
             >
-                <Zap className="inline h-6 w-6 mr-3" />
+                <Zap className="inline h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3" />
                 INITIATE CONTACT
             </motion.h2>
 
-            <p className="text-gray-400 max-w-xl text-center mb-12 relative z-10">
+            <p className="text-gray-400 max-w-xl text-center mb-8 sm:mb-12 relative z-10 text-sm sm:text-base px-2">
                 Send a message to start a collaboration or discuss a coding challenge.
             </p>
 
-            <div className="w-full max-w-lg space-y-10 relative z-10">
+            <div className="w-full max-w-lg space-y-8 sm:space-y-10 relative z-10 px-1 sm:px-0">
 
                 {/* 1. Contact Form - Streamlined Card */}
                 <motion.form
@@ -107,21 +107,21 @@ export default function Contact() {
                     onSubmit={handleSubmit}
                     method="POST"
                     action={FORMSPREE_ENDPOINT}
-                    className="p-8 w-full rounded-2xl shadow-xl backdrop-blur-md border border-purple-500/50"
+                    className="p-4 sm:p-6 md:p-8 w-full rounded-2xl shadow-xl backdrop-blur-md border border-purple-500/50"
                     style={{ background: 'rgba(20, 20, 30, 0.7)' }}
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.7 }}
                 >
-                    <h3 className="text-2xl font-semibold mb-6 text-yellow-400">Transmission Form</h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-yellow-400">Transmission Form</h3>
                     
                     {/* Submission Success/Error Message */}
                     {(status === 'success' || status === 'error') && (
-                        <div className={`p-4 mb-4 rounded-lg font-bold text-center ${status === 'success' ? 'bg-green-500/20 text-green-300 border border-green-500' : 'bg-red-500/20 text-red-300 border border-red-500'}`}>
+                        <div className={`p-3 sm:p-4 mb-4 rounded-lg font-bold text-center text-sm sm:text-base ${status === 'success' ? 'bg-green-500/20 text-green-300 border border-green-500' : 'bg-red-500/20 text-red-300 border border-red-500'}`}>
                             {status === 'success' ? (
-                                <p className="flex items-center justify-center gap-2"><CheckCircle className="h-5 w-5"/>Success! Data packet received. I'll review it shortly.</p>
+                                <p className="flex flex-wrap items-center justify-center gap-2"><CheckCircle className="h-5 w-5 shrink-0"/>Success! Data packet received. I'll review it shortly.</p>
                             ) : (
-                                <p className="flex items-center justify-center gap-2"><Zap className="h-5 w-5"/>Error! Transmission failed. Please try the direct email link below.</p>
+                                <p className="flex flex-wrap items-center justify-center gap-2"><Zap className="h-5 w-5 shrink-0"/>Error! Transmission failed. Please try again later.</p>
                             )}
                         </div>
                     )}
@@ -136,7 +136,7 @@ export default function Contact() {
                                 placeholder="Your Name"
                                 required
                                 disabled={status === 'loading' || status === 'success'}
-                                className="w-full px-4 py-2 border border-purple-500/50 rounded-lg bg-gray-900/80 text-white focus:ring-2 focus:ring-yellow-400 outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full px-4 py-3 min-h-[44px] text-base border border-purple-500/50 rounded-lg bg-gray-900/80 text-white focus:ring-2 focus:ring-yellow-400 outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             />
                         </div>
                         {/* Email Input */}
@@ -148,7 +148,7 @@ export default function Contact() {
                                 placeholder="Your Email Address"
                                 required
                                 disabled={status === 'loading' || status === 'success'}
-                                className="w-full px-4 py-2 border border-purple-500/50 rounded-lg bg-gray-900/80 text-white focus:ring-2 focus:ring-yellow-400 outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full px-4 py-3 min-h-[44px] text-base border border-purple-500/50 rounded-lg bg-gray-900/80 text-white focus:ring-2 focus:ring-yellow-400 outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             />
                         </div>
                         {/* Message Textarea */}
@@ -156,11 +156,11 @@ export default function Contact() {
                             <label className="block text-sm font-medium mb-1 text-gray-300">Message </label>
                             <textarea
                                 name="message"
-                                rows="5"
+                                rows="4"
                                 placeholder="Add your message here..."
                                 required
                                 disabled={status === 'loading' || status === 'success'}
-                                className="w-full px-4 py-2 border border-purple-500/50 rounded-lg bg-gray-900/80 text-white focus:ring-2 focus:ring-yellow-400 outline-none transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full px-4 py-3 text-base border border-purple-500/50 rounded-lg bg-gray-900/80 text-white focus:ring-2 focus:ring-yellow-400 outline-none transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                             ></textarea>
                         </div>
                         
@@ -177,11 +177,6 @@ export default function Contact() {
 
             </div>
 
-            {/* Footer */}
-            <p className="mt-16 text-sm text-white/50 relative z-10">
-                © {new Date().getFullYear()} Disha Sharma. All rights reserved.
-            </p>
-            
             {/* Custom Keyframes */}
             <style>{`
                 @keyframes pulse {
